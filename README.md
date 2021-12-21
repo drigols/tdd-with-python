@@ -1,4 +1,6 @@
-# Notas por Capítulo
+# Test-Driven Development with Python, 2nd Edition
+
+> Minhas **notas** e **códigos** do livro.
 
 ![logo](images/logo.jpeg)
 
@@ -7,6 +9,8 @@
  - **Prerequisites and Assumptions:**
    - [Introdução e Instalação do Geckodriver](#geckodriver)
  - **Chapter 1. Getting Django Set Up Using a Functional Test:**
+   - [Criando um projeto Django com django-admin.py](#django-admin-py)
+   - [Adicionando arquivos ao .gitignore com o comando "echo"](#gitignore)
  - **Chapter 02:**
  - **Chapter 03:**
  - **Chapter 04:**
@@ -77,16 +81,57 @@ You can obtain a copy of the license at https://mozilla.org/MPL/2.0/.
 
 ---
 
-<div id=""></div>
+<div id="django-admin-py"></div>
 
-## x
+## Criando um projeto Django com django-admin.py
 
-x
+A primeira etapa para colocar o Django em funcionamento é criar um projeto, que será o contêiner principal de nosso site. Django fornece uma pequena ferramenta de linha de comando para isso:
 
+```python
+$ django-admin.py startproject superlists .
+```
 
+**NOTE:**  
+Não se esqueça do **“.”** no fim; é importante!
 
+---
 
+<div id="gitignore"></div>
 
+## Adicionando arquivos ao .gitignore com o comando "echo"
+
+Agora vamos dar uma olhada e ver quais arquivos queremos enviar, para isso vamos utilizar o comando **ls**:
+
+```
+ls
+```
+
+**OUTPUT:**
+```
+db.sqlite3 
+function_tests.py 
+geckodriver.log 
+manage.py 
+superlists 
+virtualenv
+```
+
+Existem algumas coisas aqui que não queremos sob controle de versão:
+
+ - **db.sqlite3**
+   - É o arquivo de banco de dados
+ - **geckodriver.log**
+   - Contém a saída de depuração do Selenium
+ - **virtualenv**
+   -  E, finalmente, nosso virtualenv também não deve estar no git.
+
+Vamos adicionar todos eles a um arquivo especial chamado **.gitignore** que, hum, diz ao Git o que deve ser ignorado:
+
+```python
+$ echo "db.sqlite3" >> .gitignore
+$ echo "geckodriver.log" >> .gitignore
+$ echo "virtualenv" >> .gitignore
+```
 
 ---
 
@@ -98,6 +143,51 @@ x
 
 ---
 
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
 
 ---
 
@@ -110,27 +200,11 @@ x
 ---
 
 
----
-
 <div id=""></div>
 
 ## x
 
 x
-
----
-
-
----
-
-<div id=""></div>
-
-## x
-
-x
-
----
-
 
 ---
 
@@ -142,6 +216,43 @@ x
 
 ---
 
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
 
 ---
 
@@ -154,6 +265,60 @@ x
 ---
 
 
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
 ---
 
 <div id=""></div>
@@ -165,6 +330,12 @@ x
 ---
 
 
+<div id=""></div>
+
+## x
+
+x
+
 ---
 
 <div id=""></div>
@@ -175,6 +346,108 @@ x
 
 ---
 
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
+
+---
+
+<div id=""></div>
+
+## x
+
+x
 
 ---
 
