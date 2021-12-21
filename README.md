@@ -12,6 +12,10 @@
    - [Criando um projeto Django com django-admin.py](#django-admin-py)
    - [Adicionando arquivos ao .gitignore com o comando "echo"](#gitignore)
  - **Chapter 02:**
+   - [TESTE FUNCIONAL == TESTE DE ACEITAÇÃO == TESTE PONTA A PONTA == CAIXA PRETA](#funcional-test-type)
+   - [Teste: Falha esperada](#done-error)
+   - [Utilizando o "git diff" para ver o que foi alterado a partir do último commit](#git-diff)
+   - [Utilizando o comando "git commit -a"](#commit-a)
  - **Chapter 03:**
  - **Chapter 04:**
  - **Chapter 05:**
@@ -135,35 +139,101 @@ $ echo "virtualenv" >> .gitignore
 
 ---
 
-<div id=""></div>
+<div id="funcional-test-type"></div>
 
-## x
+## TESTE FUNCIONAL == TESTE DE ACEITAÇÃO == TESTE PONTA A PONTA == CAIXA PRETA
 
-x
+O que eu chamo de **testes funcionais**, algumas pessoas preferem chamar de:
 
----
+ - Testes de aceitação;
+ - Testes ponta a ponta;
+ - Testes de Caixa Preta.
 
-<div id=""></div>
+**NOTE:**  
+O ponto principal é que esses tipos de testes examinam como todo o aplicativo funciona, ***de fora***.
 
-## x
-
-x
-
----
-
-<div id=""></div>
-
-## x
-
-x
+**NOTE:**  
+Outro termo é **teste de caixa preta**, porque o teste não sabe nada sobre os componentes internos do sistema em teste.
 
 ---
 
-<div id=""></div>
+<div id="done-error"></div>
 
-## x
+## Teste: Falha esperada
 
-x
+Bem, agora nós vamos aprender um conceito simples e interessante relacionados a testes que nós conhecemos como ***Falha esperada***. Vamos começar com um exemplo de teste que verifica o título da nossa página Django.
+
+Algo parecido com isso **funcional_tests.py**:
+
+```python
+from selenium import webdriver
+
+browser = webdriver.Firefox()
+
+browser.get('http://localhost:8000')
+assert 'To-Do' in browser.title
+browser.quit()
+```
+
+**NOTE:**  
+Se você rodar esse teste de fato nós vamos ter uma **falha** e isso ja era esperado desde o início do teste - Isso é o que nós conhecemos como ***Falha esperada***.
+
+Isso na verdade é uma boa notícia - não tão boa quanto um teste que passa, mas pelo menos está falhando pelo motivo certo; podemos ter certeza de que escrevemos o teste corretamente.
+
+---
+
+<div id="git-diff"></div>
+
+## Utilizando o "git diff" para ver o que foi alterado a partir do último commit
+
+Ok, agora suponha que nós fizemos várias alterações nos nossos códigos e queremos saber o que foi alterado em relação ao último commit, como saber?
+
+Uma abordagem seria utilizar o comando **git diff** que retorna o que foi alterado em relação ao último commit.
+
+Primeiro nós utilizamos um **git status** e depois o **git diff** para ter um feedback geral:
+
+```python
+$ git status
+$ git diff
+
+diff --git a / function_tests.py b / function_tests.py
+índice d333591..b0f22dc 100644
+--- a / function_tests.py
++++ b / function_tests.py
+@@ -1,6 +1,45 @@
+ from selenium import webdriver
++ unidade de importação teste
+
+-browser = webdriver.Firefox ()
+-browser.get ('http: // localhost: 8000')
++ classe NewVisitorTest (unittest.TestCase):
+
+-assertar 'Django' em browser.title
++ def setUp (self):
++ self.browser = webdriver.Firefox ()
++
++ def tearDown (self):
++ self.browser.quit ()
+[...]
+```
+
+---
+
+<div id="commit-a"></div>
+
+## Utilizando o comando "git commit -a"
+
+Não sei se vocês notaram, mas nós não adicionamos nenhum arquivo novo no nosso projeto. Ou seja, não vamos precisar utilizar o comando **"git add"**.
+
+Sabendo disso (Que apenas fizemos mudanças sem adicionar nenhum arquivo novo) nós podemos utilizar o comando **git commit -a**.
+
+O comando **git commit -a** significa:
+
+ - Aadicionar automaticamente quaisquer alterações em arquivos rastreados (ou seja, todos os arquivos que já comitados antes).
+ - Ele NÃO adicionará nenhum arquivo novo (você mesmo terá que explicitamente git add)
+
+**NOTE:**  
+Mas frequentemente, como neste caso, não há nenhum arquivo novo, então é um atalho útil.
 
 ---
 
