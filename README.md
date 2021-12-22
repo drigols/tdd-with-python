@@ -17,6 +17,8 @@
    - [Utilizando o "git diff" para ver o que foi alterado a partir do último commit](#git-diff)
    - [Utilizando o comando "git commit -a"](#commit-a)
  - **Chapter 03:**
+   - [Diferença entre Testes Funcionais & Testes de Unidade](#funcional-unidade)
+   - [Utilizando o comando "git commit -am"](#commit-am)
  - **Chapter 04:**
  - **Chapter 05:**
  - **Chapter 06:**
@@ -230,26 +232,63 @@ Sabendo disso (Que apenas fizemos mudanças sem adicionar nenhum arquivo novo) n
 O comando **git commit -a** significa:
 
  - Aadicionar automaticamente quaisquer alterações em arquivos rastreados (ou seja, todos os arquivos que já comitados antes).
- - Ele NÃO adicionará nenhum arquivo novo (você mesmo terá que explicitamente git add)
+ - Ele NÃO adicionará nenhum arquivo novo (você mesmo terá que explicitamente git add).
 
 **NOTE:**  
 Mas frequentemente, como neste caso, não há nenhum arquivo novo, então é um atalho útil.
 
 ---
 
-<div id=""></div>
+<div id="funcional-unidade"></div>
 
-## x
+## Diferença entre Testes Funcionais & Testes de Unidade
 
-x
+É normal no início da carreira desenvolvedores saírem fazendo testes dos seus códigos sem saber diferenciar os **Testes Funcionais** & **Testes de Unidade**. Mas se você assim como eu desejam saber o que estão fazendo e fazer da maneira correta é muito interessante sabe diferenciar esses 2 tipos de testes.
+
+Uma distinção básica sobre esses 2 tipos de testes podem ser a seguinte:
+
+ - Os testes funcionais testam o aplicativo de fora, do ponto de vista do usuário:
+   - Por exemplo, os requisitos.
+ - Os testes de unidade testam o aplicativo por dentro, do ponto de vista do programador.
+
+A abordagem TDD que estou seguindo deseja que nosso aplicativo seja coberto por ambos os tipos de teste. Nosso fluxo de trabalho será mais ou menos assim:
+
+ - **STEP-01 - TESTE FUNCIONAL:**
+   - Começamos escrevendo um **teste funcional**, descrevendo a nova funcionalidade do ponto de vista do usuário.
+     - Assim que tivermos um teste funcional que falhou, começamos a pensar em como escrever um código que possa fazer com que ele seja aprovado (ou pelo menos supere sua falha atual).
+ - **STEP-02 - TESTE DE UNIDADE:**
+   - Agora usamos um ou mais testes de unidade para definir como queremos que nosso código se comporte - a ideia é que cada linha de código de produção que escrevemos deve ser testada por (pelo menos) um de nossos testes de unidade.
+   - Assim que tivermos um teste de unidade com falha, escrevemos a menor quantidade possível de código de aplicativo, apenas o suficiente para que o teste de unidade seja aprovado.
+
+**NOTE:**  
+Você pode ver que, do começo ao fim:
+
+ - os **testes funcionais** estão conduzindo o desenvolvimento que fazemos em um ***alto nível***.
+ - Enquanto os **testes de unidade** conduzem o que fazemos em ***baixo nível***.
+
+**NOTE:**  
+Isso parece um pouco redundante? Às vezes, pode parecer assim, mas os testes funcionais e os testes de unidade realmente têm objetivos muito diferentes e geralmente acabam parecendo bem diferentes.
+
+**Para finalizar você deve ter em mente que:**
+
+ - Os **testes funcionais** devem ajudá-lo a construir um aplicativo com a `funcionalidade certa` e garantir que você nunca o interrompa acidentalmente.
+ - Os **testes de unidade** devem ajudá-lo a escrever um código limpo e sem erros.
 
 ---
 
-<div id=""></div>
+<div id="commit-am"></div>
 
-## x
+## Utilizando o comando "git commit -am"
 
-x
+Quando nós utilizamos o comando **"git commit -am"** isso significa que nós estamos utilizando os seguintes comandos em conjunto:
+
+```
+git commit -a
+git commit -m
+```
+
+**NOTE:**  
+Ou seja, suponha que nós apenas fizemos algumas alterações e não temos novos arquivos para adicionar com o comando **git add** e também queremos deixar uma mensagem no commit, basta utilizar o comando **"git commit -am"**.
 
 ---
 
